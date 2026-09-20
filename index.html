@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f4f1ea" />
+  <title>Fairway Forward | Golf that gives back</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <style>.modal{max-height:calc(100vh - 40px);overflow:auto}.app-sidebar{overflow-y:auto}.hero-art{overflow:hidden}</style>
+</head>
+<body>
+  <div class="grain"></div>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Fairway Forward home"><span class="brand-mark">↗</span><span>fairway<br><em>forward</em></span></a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="#how-it-works">How it works</a>
+      <a href="#charities">Charities</a>
+      <a href="#draw">The draw</a>
+    </nav>
+    <div class="header-actions"><button class="text-button" id="loginBtn">Log in</button><button class="button button-dark" id="joinBtn">Join the movement <span>↗</span></button></div>
+  </header>
+
+  <main id="top">
+    <section class="hero wrap">
+      <div class="hero-copy reveal">
+        <p class="eyebrow"><span class="eyebrow-dot"></span> The monthly golf draw with a bigger purpose</p>
+        <h1>Your game can<br><i>change</i> a game.</h1>
+        <p class="hero-lede">Play your numbers. Back a cause. Share in the draw. Fairway Forward turns every round into a little more good.</p>
+        <div class="hero-ctas"><button class="button button-accent" id="heroJoin">Start playing <span>↗</span></button><a class="play-link" href="#how-it-works"><span class="play-icon">▶</span> See how it works</a></div>
+        <div class="trust-line"><div class="avatars"><span>KM</span><span>AR</span><span>TL</span><span>+</span></div><p><strong>2,480 players</strong> are already playing with purpose</p></div>
+      </div>
+      <div class="hero-art reveal-delay">
+        <div class="hero-orbit orbit-one"></div><div class="hero-orbit orbit-two"></div>
+        <div class="impact-card card-top"><span class="card-label">Raised this month</span><strong>£18,420</strong><span class="trend">↑ 12.4%</span></div>
+        <div class="hero-disc"><div class="disc-inner"><span>01</span><strong>make<br>it count</strong><small>your score has a ripple effect</small></div></div>
+        <div class="impact-card card-bottom"><span class="mini-icon">✦</span><div><span class="card-label">Spotlight cause</span><strong>Mindful Miles</strong></div><span class="arrow">↗</span></div>
+        <div class="floating-note">Every entry<br><b>backs a cause.</b></div>
+      </div>
+    </section>
+
+    <section class="impact-strip"><div class="wrap impact-grid"><div><span class="strip-kicker">The ripple effect</span><strong>One subscription.<br><em>Three kinds of impact.</em></strong></div><div class="stat"><strong>£6.20</strong><span>goes to your chosen<br>charity every month</span></div><div class="stat"><strong>40%</strong><span>of the prize pool<br>is the jackpot</span></div><div class="stat"><strong>5</strong><span>latest Stableford<br>scores to enter</span></div></div></section>
+
+    <section class="section wrap" id="how-it-works"><div class="section-heading"><div><p class="eyebrow">01 / Simple by design</p><h2>Good things happen<br><i>in three steps.</i></h2></div><p class="section-intro">No handicaps to calculate. No fussy clubhouse rituals. Just the best bits of your game, connected to something that matters.</p></div><div class="steps"><article class="step"><div class="step-number">01</div><div class="step-art score-art"><span class="score-pill">STABLEFORD</span><strong>34</strong><small>your latest score</small></div><h3>Log your last five</h3><p>Add your Stableford scores in seconds. Your score history does the rest.</p></article><article class="step"><div class="step-number">02</div><div class="step-art charity-art"><span class="charity-sun">✦</span><strong>10%</strong><small>minimum to charity</small></div><h3>Choose your cause</h3><p>Pick a charity close to your heart. Increase your contribution whenever you like.</p></article><article class="step"><div class="step-number">03</div><div class="step-art draw-art"><span class="draw-ball">3</span><span class="draw-ball">8</span><span class="draw-ball">17</span><span class="draw-ball">24</span><span class="draw-ball">41</span></div><h3>Join the monthly draw</h3><p>Every active member gets a line in the draw and a chance to win together.</p></article></div></section>
+
+    <section class="cause-section" id="charities"><div class="wrap cause-grid"><div class="cause-image"><div class="image-caption"><span>Featured partner</span><strong>Mindful Miles</strong><small>Movement for brighter minds</small></div></div><div class="cause-copy"><p class="eyebrow">02 / Your impact</p><h2>Find a cause<br>worth <i>playing for.</i></h2><p>From community food gardens to accessible mental health support, your membership makes a real-world difference every month. Meet the charities in our growing circle.</p><div class="cause-links"><button class="button button-outline" id="exploreBtn">Explore charities <span>↗</span></button><span>18 causes live now</span></div></div></div></section>
+
+    <section class="section draw-section wrap" id="draw"><div class="draw-intro"><p class="eyebrow">03 / The monthly moment</p><h2>A little<br><i>extraordinary.</i></h2><p>Three ways to match. One prize pool shaped by our community. A jackpot that grows until someone takes it home.</p><button class="text-button underlined" id="seeDrawBtn">See the prize breakdown <span>↗</span></button></div><div class="prize-board"><div class="board-header"><span>Next draw</span><strong>30 <small>APR</small></strong><span class="live-dot">● LIVE POOL</span></div><div class="prize-row"><div class="prize-ball jackpot-ball">5</div><div><span>5-number match</span><strong>£12,640</strong></div><em>40%</em></div><div class="prize-row"><div class="prize-ball">4</div><div><span>4-number match</span><strong>£4,180</strong></div><em>35%</em></div><div class="prize-row"><div class="prize-ball">3</div><div><span>3-number match</span><strong>£2,980</strong></div><em>25%</em></div><div class="board-foot"><span>Based on 2,480 active members</span><span>Jackpot rolls over</span></div></div></section>
+
+    <section class="final-cta"><div class="wrap final-cta-inner"><p class="eyebrow">Your next round can do more</p><h2>Ready to make<br><i>your mark?</i></h2><button class="button button-light" id="finalJoin">Join Fairway Forward <span>↗</span></button></div></section>
+  </main>
+  <footer class="site-footer wrap"><a class="brand" href="#top"><span class="brand-mark">↗</span><span>fairway<br><em>forward</em></span></a><span>Golf with a little more good in it.</span><span>© 2026 Fairway Forward</span></footer>
+
+  <div class="modal-backdrop" id="authModal" aria-hidden="true"><div class="modal"><button class="modal-close" data-close>×</button><div class="modal-kicker">Welcome to the movement</div><h2 id="modalTitle">Start playing<br><i>with purpose.</i></h2><p class="modal-copy">Your membership, your scores, your cause.</p><div class="plan-toggle"><button class="active" data-plan="monthly">Monthly <span>£12 / mo</span></button><button data-plan="yearly">Yearly <span>£120 / yr</span></button></div><label>Email address<input type="email" id="emailInput" placeholder="you@example.com"></label><label>Password<input type="password" id="passwordInput" placeholder="At least 8 characters"></label><button class="button button-accent full-width" id="authSubmit">Create my account <span>↗</span></button><p class="form-note">Demo mode: any valid email and password will work.</p></div></div>
+
+  <div class="app-shell" id="appShell" aria-hidden="true"><aside class="app-sidebar"><a class="brand" href="#top"><span class="brand-mark">↗</span><span>fairway<br><em>forward</em></span></a><div class="user-chip"><span class="user-avatar">JD</span><div><strong>Jamie Davis</strong><small>Member since 2024</small></div></div><nav class="app-nav"><button class="active" data-view="overview">◈ <span>Overview</span></button><button data-view="scores">⌁ <span>My scores</span></button><button data-view="charity">✦ <span>My charity</span></button><button data-view="draws">◎ <span>Draws & winnings</span></button><button data-view="admin">⚙ <span>Admin control</span></button></nav><button class="logout" id="logoutBtn">← Back to home</button></aside><section class="app-content"><div class="app-topbar"><div><span class="app-eyebrow" id="viewKicker">MEMBER OVERVIEW</span><h2 id="viewTitle">Good morning, Jamie.</h2></div><div class="topbar-actions"><span class="status-pill"><i></i> Subscription active</span><button class="icon-button" id="closeApp">×</button></div></div><div class="view-container" id="viewContainer"></div></section></div>
+  <script src="app.js"></script>
+</body>
+</html>
