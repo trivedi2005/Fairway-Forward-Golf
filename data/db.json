@@ -1,0 +1,81 @@
+{
+  "users": [
+    {
+      "id": "user-demo",
+      "name": "Jamie Davis",
+      "email": "jamie@example.com",
+      "password": "password123",
+      "plan": "monthly",
+      "charity": "Mindful Miles",
+      "contributionPercent": 10,
+      "role": "member",
+      "createdAt": "2024-01-15"
+    },
+    {
+      "id": "admin-demo",
+      "name": "Alex Morgan",
+      "email": "admin@example.com",
+      "password": "password123",
+      "plan": "yearly",
+      "charity": "Mindful Miles",
+      "contributionPercent": 15,
+      "role": "admin",
+      "createdAt": "2024-01-15"
+    }
+  ],
+  "sessions": {},
+  "scores": [
+    {
+      "id": "score-1",
+      "userId": "user-demo",
+      "score": 34,
+      "date": "2026-04-16"
+    },
+    {
+      "id": "score-2",
+      "userId": "user-demo",
+      "score": 29,
+      "date": "2026-04-05"
+    },
+    {
+      "id": "score-3",
+      "userId": "user-demo",
+      "score": 37,
+      "date": "2026-03-22"
+    }
+  ],
+  "charities": [
+    {
+      "id": "mindful-miles",
+      "name": "Mindful Miles",
+      "description": "Mental health through movement",
+      "featured": true
+    },
+    {
+      "id": "green-table",
+      "name": "The Green Table",
+      "description": "Community food gardens",
+      "featured": false
+    },
+    {
+      "id": "open-fairways",
+      "name": "Open Fairways",
+      "description": "Accessible golf for all",
+      "featured": false
+    }
+  ],
+  "draws": [
+    {
+      "id": "draw-april-2026",
+      "month": "April 2026",
+      "status": "scheduled",
+      "jackpot": 12640,
+      "activeMembers": 2480
+    }
+  ],
+  "winners": [],
+  "stats": {
+    "charityTotal": 15300,
+    "pendingReviews": 4
+  }
+}
