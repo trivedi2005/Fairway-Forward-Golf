@@ -57,7 +57,7 @@ async function api(req, res) {
   const db = readDb();
   const url = new URL(req.url, `http://${req.headers.host}`);
   const route = url.pathname;
-  if (req.method === 'GET' && route === '/api/health') return send(res, 200, { ok: true, service: 'fairway-forward', persistence: 'json' });
+  if (req.method === 'GET' && route === '/api/health') return send(res, 200, { ok: true, service: 'fairway-forward-golf', persistence: 'json' });
   if (req.method === 'POST' && (route === '/api/auth/signup' || route === '/api/auth/login')) {
     const input = await body(req);
     const email = String(input.email || '').trim().toLowerCase();

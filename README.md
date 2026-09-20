@@ -1,6 +1,6 @@
-# Fairway Forward
+# Fairway Forward Golf
 
-A full-stack local implementation of the Fairway Forward golf, charity, and monthly draw platform.
+A full-stack local implementation of the Fairway Forward Golf charity and monthly draw platform.
 
 ## Run
 
