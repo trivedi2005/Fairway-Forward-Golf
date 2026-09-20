@@ -7,6 +7,7 @@ const PORT = Number(process.env.PORT || 4173);
 const ROOT = __dirname;
 const DATA_DIR = path.join(ROOT, 'data');
 const DB_FILE = path.join(DATA_DIR, 'db.json');
+const RUNTIME_DB_FILE = process.env.VERCEL ? path.join('/tmp', 'fairway-forward-db.json') : DB_FILE;
 const staticTypes = { '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8', '.js': 'text/javascript; charset=utf-8' };
 const seed = {
   users: [
@@ -30,11 +31,14 @@ const seed = {
 };
 
 function ensureDb() {
-  fs.mkdirSync(DATA_DIR, { recursive: true });
-  if (!fs.existsSync(DB_FILE)) fs.writeFileSync(DB_FILE, JSON.stringify(seed, null, 2));
+  fs.mkdirSync(path.dirname(RUNTIME_DB_FILE), { recursive: true });
+  if (!fs.existsSync(RUNTIME_DB_FILE)) {
+    if (RUNTIME_DB_FILE === DB_FILE) fs.writeFileSync(RUNTIME_DB_FILE, JSON.stringify(seed, null, 2));
+    else fs.copyFileSync(DB_FILE, RUNTIME_DB_FILE);
+  }
 }
-function readDb() { ensureDb(); return JSON.parse(fs.readFileSync(DB_FILE, 'utf8')); }
-function writeDb(db) { fs.writeFileSync(DB_FILE, JSON.stringify(db, null, 2)); }
+function readDb() { ensureDb(); return JSON.parse(fs.readFileSync(RUNTIME_DB_FILE, 'utf8')); }
+function writeDb(db) { fs.writeFileSync(RUNTIME_DB_FILE, JSON.stringify(db, null, 2)); }
 function id(prefix) { return `${prefix}-${crypto.randomBytes(6).toString('hex')}`; }
 function send(res, status, body) { res.writeHead(status, { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-store' }); res.end(JSON.stringify(body)); }
 function serveFile(req, res) {
@@ -90,5 +94,19 @@ async function api(req, res) {
   return send(res, 404, { error: 'API route not found' });
 }
 
-const server = http.createServer(async (req, res) => { try { if (req.url.startsWith('/api/')) await api(req, res); else serveFile(req, res); } catch (error) { send(res, 500, { error: error.message || 'Internal server error' }); } });
-ensureDb(); server.listen(PORT, () => console.log(`Fairway Forward running at http://localhost:${PORT}`));
+async function handleRequest(req, res) {
+  try {
+    if (req.url.startsWith('/api/')) await api(req, res);
+    else serveFile(req, res);
+  } catch (error) {
+    send(res, 500, { error: error.message || 'Internal server error' });
+  }
+}
+
+if (require.main === module) {
+  const server = http.createServer(handleRequest);
+  ensureDb();
+  server.listen(PORT, () => console.log(`Fairway Forward running at http://localhost:${PORT}`));
+}
+
+module.exports = handleRequest;
