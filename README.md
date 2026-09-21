@@ -24,6 +24,6 @@ Open http://localhost:4173.
 - Charity selection and contribution percentage persistence
 - Admin metrics and protected draw simulation endpoint
 
-## Production next steps
+## Deployed URL
 
-Replace the local JSON datastore with Supabase/Postgres, hash passwords, use secure signed sessions, and connect Stripe webhooks before production deployment. Provider-specific integrations are intentionally isolated behind the API boundary.
+https://pro-ebon-kappa.vercel.app/
